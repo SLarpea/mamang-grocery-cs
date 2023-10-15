@@ -1,0 +1,13 @@
+.cartNotif {
+    font-size: 1.2rem !important;
+    font-style: italic !important;
+    font-weight: 300 !important;
+    color: var(--secondary-light-text-color);
+    margin: 0 auto;
+
+    .cartNum {
+        font-weight: 600 !important;
+        font-size: 1.2rem !important;
+        font-style: italic !important;
+    }
+}

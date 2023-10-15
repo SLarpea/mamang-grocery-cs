@@ -30,20 +30,16 @@
     }
 }
 
-.options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid orange;
+.signup, .fyp {
+    font-size: 1.2rem !important;
+    font-style: normal;
+    font-weight: 400 !important;
+    color: var(--secondary-light-text-color);
+    text-transform: capitalize;
 
-    span {
-        border: 1px solid black;
-        width: max-content;
-        font-size: .5rem;
-        font-style: normal;
-        font-weight: 300;
-        text-transform: capitalize;
-        color: var(--secondary-light-text-color);
+    &:hover {
+        cursor: pointer;
+        color: var(--primary-light-text-color);
     }
 }
 

@@ -20,11 +20,9 @@ const SignInDropDown = ({ show }: Props) => {
         <FontAwesomeIcon icon={faLock} />
         <input type="text" placeholder="password" />
       </div>
-      <div className={styles.options}>
-        <span className={styles.signUp}>sign up</span>
-        <span className={styles.fyp}>forgot your password?</span>
-      </div>
       <button className={styles.submit}>Sign in</button>
+      <span className={styles.signup}>&gt;&gt; sign up</span>
+      <span className={styles.fyp}>&gt;&gt; forgot your password?</span>
     </Dropdown>
   );
 };

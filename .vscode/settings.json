@@ -1,4 +1,5 @@
 {
     "workbench.preferredDarkColorTheme": "Dracula Soft",
-    "workbench.colorTheme": "Dracula"
+    "workbench.colorTheme": "Dracula",
+    "typescript.tsdk": "node_modules\\typescript\\lib"
 }

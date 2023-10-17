@@ -1,51 +1,39 @@
 "use client";
-import React, { useRef, useEffect, ReactNode } from 'react';
-import styles from './index.module.scss';
-import { register } from 'swiper/element/bundle';
+import { useRef, useEffect } from 'react';
+import Slider from "react-slick";
 
-register();
-
-interface Props {
-    children: ReactNode;
-    slidesPerView: number;
-    navigation: boolean;
-    autoPlay?: boolean;
-    loop?: boolean;
-    speed?: number;
-}
-
-const Swiper = ({ children, slidesPerView, navigation, autoPlay, loop, speed }: Props) => {
-    const swiperElRef = useRef<HTMLElement | null>(null);
-
-    useEffect(() => {
-        // listen for Swiper events using addEventListener
-    swiperElRef.current?.addEventListener('progress', (e: any) => {
-        const [swiper, progress] = e.detail;
-        console.log(progress);
-      });
-  
-      swiperElRef.current?.addEventListener('slidechange', (e: any) => {
-        console.log('slide changed');
-      });
-    }, [])
-
-    return (
-        <swiper-container
-            slides-per-view="1"
-            autoplay-delay="3000"
-            navigation={false}  
-            loop={true}
-            // slidesPerView={1}
-            // autoplay={{
-            //     delay: 1000
-            // }}
-            // navigation={false}
-            // loop={true}
-        >
-            {children}
-        </swiper-container>
-        // <div>yow</div>
-    )
-}
+const Swiper = () => {
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 1000
+  };
+  return (
+    <Slider {...settings}>
+      <div>
+        <h3>1</h3>
+      </div>
+      <div>
+        <h3>2</h3>
+      </div>
+      <div>
+        <h3>3</h3>
+      </div>
+      <div>
+        <h3>4</h3>
+      </div>
+      <div>
+        <h3>5</h3>
+      </div>
+      <div>
+        <h3>6</h3>
+      </div>
+    </Slider>
+  );
+};
 
 export default Swiper;

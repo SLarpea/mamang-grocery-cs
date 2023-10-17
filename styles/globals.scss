@@ -3,6 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'slick-carousel/slick/slick.css';
+@import 'slick-carousel/slick/slick-theme.css';
+
 :root {
     font-size: 62.5%;
     --main-bg-color: #6b21a8;

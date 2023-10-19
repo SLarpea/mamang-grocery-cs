@@ -1,0 +1,19 @@
+.wrapper {
+    margin: 0 auto;
+    border: 1px solid green;
+    padding: 1rem 0;
+}
+
+/* For Large Screens View */
+@media only screen and (min-width: 1301px) {
+    .wrapper {
+        max-width: 130rem;
+    }
+}
+
+/* For Desktop View */
+@media only screen and (min-width: 1024px) and (max-width: 1300px) {
+    .wrapper {
+        max-width: 100rem;
+    }
+}

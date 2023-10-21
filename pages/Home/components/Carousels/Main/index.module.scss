@@ -1,15 +1,68 @@
 .wrapper {
     width: 100%;
     height: auto;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
 
     .carousel {
         .slide {
             .imgWrapper {
                 width: 100%;
-                height: 50rem;
+                height: 60rem;
                 position: relative;
-                border: 1px solid orange;
             }
         }
+    }
+
+    .dots {
+        width: max-content;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%); 
+        bottom: 1rem;
+        padding: .5rem 1rem;
+        background: var(--secondary-bg-color);
+        border-radius: 2rem;
+        box-shadow: rgba(0, 0, 0, 0.15) 0 .3rem .3rem 0;
+        display: flex;
+        gap: .5rem;
+
+        .dot {
+            height: 2rem;
+            width: 2rem;
+            border: .2rem solid var(--main-bg-color);
+            padding: .3rem;
+            border-radius: 2.5rem;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            .selectedDot {
+                width: 100%;
+                height: 100%;
+                border-radius: 2rem;
+                
+                &.selected {
+                    background: var(--main-bg-color);
+                    border: .1rem solid var(--main-bg-color);
+                }
+            }
+        }
+    }
+}
+
+/* For Large Screens View */
+@media only screen and (min-width: 1301px) {
+    .wrapper {
+        max-width: 160rem;
+    }
+}
+
+/* For Desktop View */
+@media only screen and (min-width: 1024px) and (max-width: 1300px) {
+    .wrapper {
+        max-width: 100%;
     }
 }

@@ -10,6 +10,9 @@ interface Props {
 export interface CarouselRef {
   slickNext: () => void;
   slickPrev: () => void;
+  slickGoTo: (index: number) => void;
+  slickPause: () => void;
+  slickPlay: () => void;
 }
 
 const Carousel = forwardRef<CarouselRef, Props>(({ children, ...rest }, ref) => {
@@ -32,6 +35,15 @@ const Carousel = forwardRef<CarouselRef, Props>(({ children, ...rest }, ref) => 
     slickPrev: () => {
       carouselRef.current?.slickPrev();
     },
+    slickGoTo: (index: number) => {
+      carouselRef.current?.slickGoTo(index, false); // if true, it will go to the slide without animation.
+    },
+    slickPause: () => {
+      carouselRef.current?.slickPause();
+    },
+    slickPlay: () => {
+      carouselRef.current?.slickPlay();
+    }
   }));
 
   return (

@@ -25,7 +25,7 @@ const Main = () => {
   const beforeSlideChange = (oldIndex: number, newIndex: number) => {
     setSelectedDot(newIndex);
   };
-  
+
   const goToSlide = (
     e: React.MouseEvent<HTMLDivElement, MouseEvent>,
     idx: number
@@ -62,7 +62,6 @@ const Main = () => {
                 fill
                 quality={100}
                 priority={true}
-                sizes="(max-width: 160rem) 100vw"
               />
             </div>
           </Slide>

@@ -5,9 +5,15 @@ import Carousel, { CarouselRef } from "@/components/common/Carousel";
 import Slide from "@/components/common/Carousel/components/Slide";
 import Image from "next/image";
 import classnames from "classnames";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faChevronRight,
+  faChevronLeft,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Main = () => {
   const [selectedDot, setSelectedDot] = useState<number>(0);
+  const [showNavigation, setShowNavigation] = useState<boolean>(false);
   const carouselRef = useRef<CarouselRef | null>(null);
   const imgs = useMemo(() => {
     return ["grocery1.jpg", "grocery2.jpg", "grocery3.jpg", "grocery4.jpg"];
@@ -15,9 +21,11 @@ const Main = () => {
   const dots = useMemo(() => {
     return [1, 2, 3, 4];
   }, []);
+
   const beforeSlideChange = (oldIndex: number, newIndex: number) => {
     setSelectedDot(newIndex);
   };
+  
   const goToSlide = (
     e: React.MouseEvent<HTMLDivElement, MouseEvent>,
     idx: number
@@ -25,8 +33,13 @@ const Main = () => {
     setSelectedDot(idx);
     carouselRef.current?.slickGoTo(idx);
   };
+
   return (
-    <div className={styles.wrapper}>
+    <div
+      className={styles.wrapper}
+      onMouseEnter={() => setShowNavigation(true)}
+      onMouseLeave={() => setShowNavigation(false)}
+    >
       <Carousel
         ref={carouselRef}
         className={styles.carousel}
@@ -71,6 +84,26 @@ const Main = () => {
             ></div>
           </div>
         ))}
+      </div>
+      <div
+        className={classnames(styles.prevBtn, {
+          [styles.display]: showNavigation,
+        })}
+        onMouseEnter={() => carouselRef.current?.slickPause()}
+        onMouseLeave={() => carouselRef.current?.slickPlay()}
+        onClick={() => carouselRef.current?.slickPrev()}
+      >
+        <FontAwesomeIcon icon={faChevronLeft} />
+      </div>
+      <div
+        className={classnames(styles.nextBtn, {
+          [styles.display]: showNavigation,
+        })}
+        onMouseEnter={() => carouselRef.current?.slickPause()}
+        onMouseLeave={() => carouselRef.current?.slickPlay()}
+        onClick={() => carouselRef.current?.slickNext()}
+      >
+        <FontAwesomeIcon icon={faChevronRight} />
       </div>
     </div>
   );

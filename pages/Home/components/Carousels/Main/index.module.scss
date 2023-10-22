@@ -51,6 +51,40 @@
             }
         }
     }
+
+    .prevBtn, .nextBtn {
+        position: absolute;
+        width: 4rem;
+        height: 5rem;
+        font-size: 2rem;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background: var(--main-bg-color);
+        border: .1rem solid var(--main-bg-color);
+        color: var(--primary-active-color);
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &.display {
+            display: flex;
+        }
+    }
+
+    .prevBtn {
+        top: 50%;
+        transform: translateY(-50%);
+        box-shadow: rgba(0, 0, 0, 0.15) 0 .3rem .3rem 0;
+    }
+
+    .nextBtn {
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        box-shadow: rgba(0, 0, 0, 0.15) 0 .3rem .3rem 0;
+    }
 }
 
 /* For Large Screens View */

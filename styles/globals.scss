@@ -36,6 +36,7 @@ html, body {
     font-family: 'Fira Sans', sans-serif;
     height: 100dvh;
     width: 100dvw;
+    max-width: 100%;
     position: relative;
     scroll-behavior: smooth;
     user-select: none;
@@ -43,7 +44,7 @@ html, body {
 }
 
 body {
-    font-size: 1.6rem;
+    font-size: 1.6vw;
     font-weight: 400;
     font-style: none;
     color: var(--primary-light-text-color);

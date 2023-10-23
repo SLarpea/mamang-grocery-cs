@@ -1,0 +1,174 @@
+.wrapper {
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    padding-bottom: 4rem;
+    margin-bottom: 2rem;
+
+    .header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+
+        .carouselTitle {
+            height: auto;
+            width: auto;
+            float: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+
+            span {
+                &:first-child {
+                    min-width: max-content;
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    font-style: normal;
+                }
+
+                &:last-child {
+                    min-width: max-content;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    font-style: normal;
+                    color: var(--primary-active-color);
+                    padding: .3rem 1rem;
+                    border: .1rem solid var(--main-bg-color);
+                    background: var(--main-bg-color);
+                    border-radius: 2rem;
+                    box-shadow: rgba(60, 64, 67, 0.3) 0 .1rem .2rem 0, rgba(60, 64, 67, 0.15) 0 .1rem .3rem .1rem;
+
+                    &:hover {
+                        cursor: pointer;
+                        box-shadow: rgba(60, 64, 67, 0.3) 0 .1rem .2rem 0, rgba(60, 64, 67, 0.15) 0 .2rem .6rem .2rem;
+                    }
+                }
+            }
+        }
+
+        .carouselNav {
+            height: auto;
+            width: auto;
+            float: right;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            .prevBtn, .nextBtn {
+                height: 3.5rem;
+                width: 3.5rem;
+                border: .2rem solid var(--secondary-active-color);
+                color: var(--secondary-active-color);
+                border-radius: 3.5rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.3rem;
+
+                &:hover {
+                    border: .2rem solid var(--main-bg-color);
+                    color: var(--main-bg-color);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .carousel {
+        width: 100%;
+        height: auto;
+
+        .slide {
+            height: auto;
+            border: .1rem solid var(--secondary-active-color);
+            box-shadow: rgba(0, 0, 0, 0.1) 0 .1rem .3rem 0, rgba(0, 0, 0, 0.06) 0 .1rem .2rem 0;
+
+            &:hover {
+                cursor: pointer;
+                border: .1rem solid var(--main-bg-color);
+                box-shadow: none;
+            }
+
+            .product {
+                height: 27rem;
+
+                .image {
+                    width: 100%;
+                    height: 17.5rem;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: none;
+                    transition: border 5s ease-in;
+                }
+
+                .productInfo {
+                    padding: .5rem 1rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    gap: .8rem;
+                    height: calc(100% - 17.5rem);
+
+                    .name {
+                        max-width: 100%;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        font-size: 1.3rem;
+                        font-weight: 500;
+                        font-style: normal;
+                    }
+
+                    .priceCon {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        .price {
+                            display: flex;
+                            align-items: center;
+                            color: var(--primary-text-color);
+
+                            .curr {
+                                font-size: 1.3rem;
+                                font-weight: 500;
+                            }
+
+                            .amount {
+                                min-width: max-content;
+                                font-size: 1.5rem;
+                                font-weight: 600;
+                            }
+                        }
+
+                        .soldNum {
+                            font-size: 1.3rem;
+                            color: var(--secondary-light-text-color);
+                            font-weight: 300;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* For Large Screens View */
+@media only screen and (min-width: 1301px) {
+    .wrapper {
+        max-width: 130rem;
+    }
+}
+
+/* For Desktop View */
+@media only screen and (min-width: 1024px) and (max-width: 1300px) {
+    .wrapper {
+        max-width: 100rem;
+    }
+}

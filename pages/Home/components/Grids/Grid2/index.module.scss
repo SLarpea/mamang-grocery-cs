@@ -1,0 +1,64 @@
+.wrapper {
+    margin: 0 auto;
+    padding: 1rem 0;
+    margin-bottom: 1.7rem;
+
+    .grid {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        column-gap: .8rem;
+        row-gap: .8rem;
+        margin: 0 auto;
+
+        div {
+            height: 25rem;
+            border: .1rem solid var(--main-bg-color);
+            background: var(--main-bg-color);
+            color: var(--primary-active-color);
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            --mask: 
+                  linear-gradient(#000 0 0) center/calc(100% - 10px) calc(100% - 10px) no-repeat,
+                  conic-gradient(from  135deg at top   ,#0000,#000 1deg 89deg,#0000 90deg) 0 0   /10px 20px space no-repeat,
+                  conic-gradient(from  -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 0 100%/10px 20px space no-repeat,
+                  conic-gradient(from   45deg at left  ,#0000,#000 1deg 89deg,#0000 90deg) 0 0   /20px 10px no-repeat space,
+                  conic-gradient(from -135deg at right ,#0000,#000 1deg 89deg,#0000 90deg) 100% 0/20px 10px no-repeat space;
+                -webkit-mask: var(--mask);
+                        mask: var(--mask);
+
+            span {
+                &:not(:nth-child(2)) {
+                    font-size: 2rem;
+                    font-weight: 300;
+                    font-style: normal;
+                    text-transform: uppercase;
+                }
+
+                &:nth-child(2) {
+                    font-size: 5rem;
+                    font-weight: 600;
+                    font-style: normal;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}
+
+/* For Large Screens View */
+@media only screen and (min-width: 1301px) {
+    .wrapper {
+        max-width: 130rem;
+    }
+}
+
+/* For Desktop View */
+@media only screen and (min-width: 1024px) and (max-width: 1300px) {
+    .wrapper {
+        max-width: 100rem;
+    }
+}

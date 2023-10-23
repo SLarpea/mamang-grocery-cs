@@ -21,7 +21,6 @@ const Carousel = forwardRef<CarouselRef, Props>(({ children, ...rest }, ref) => 
     infinite: true,
     speed: 500,
     autoplay: true,
-    pauseOnHover: true,
     rows: 1,
     centerMode: true,
     ...rest

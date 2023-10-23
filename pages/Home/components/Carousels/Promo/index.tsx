@@ -23,6 +23,7 @@ const Promo = () => {
         slidesToShow={1}
         slidesPerRow={1}
         autoplaySpeed={5000}
+        pauseOnHover={true}
         centerPadding={'0'}
       >
         <Slide className={styles.slide}>

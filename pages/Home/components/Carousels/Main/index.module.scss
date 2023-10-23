@@ -4,6 +4,7 @@
     margin: 0 auto;
     text-align: center;
     position: relative;
+    margin-bottom: 1.5rem;
 
     .carousel {
         .slide {
@@ -22,15 +23,15 @@
         transform: translateX(-50%); 
         bottom: 1rem;
         padding: .5rem 1rem;
-        background: var(--secondary-bg-color);
+        background: rgba(245,245,245, 0.7);
         border-radius: 2rem;
         box-shadow: rgba(0, 0, 0, 0.15) 0 .3rem .3rem 0;
         display: flex;
         gap: .5rem;
 
         .dot {
-            height: 2rem;
-            width: 2rem;
+            height: 1.7rem;
+            width: 1.7rem;
             border: .2rem solid var(--main-bg-color);
             padding: .3rem;
             border-radius: 2.5rem;

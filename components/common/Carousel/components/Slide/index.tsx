@@ -9,7 +9,7 @@ interface Props {
 
 const Slide = ({ children, ...props }: Props) => {
   return (
-    <div {...props}>
+    <div {...props} style={{margin: '.2rem'}}>
         {children}
     </div>
   )

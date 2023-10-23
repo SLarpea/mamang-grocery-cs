@@ -51,6 +51,7 @@ const Main = () => {
         slidesPerRow={1}
         autoplaySpeed={3000}
         centerPadding={"0"}
+        pauseOnHover={true}
         beforeChange={beforeSlideChange}
       >
         {imgs.map((src, index) => (

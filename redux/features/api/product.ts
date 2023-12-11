@@ -1,4 +1,4 @@
-import { Product } from '@/redux/types';
+import { DataReponse, Product } from '@/redux/types';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 const toQueryParams = (q: any) => {
@@ -10,10 +10,11 @@ export const productsApi = createApi({
     baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_API_URL }),
     tagTypes: ["Product", "SingleProduct"],
     endpoints: (builder) => ({
-        getProducts: builder.query<Product[], void>({
-            query: (q: any) => "products?" + toQueryParams(q),
-            providesTags: (result) =>
-                result ? [...result.map(({ id }) => ({ type: 'Product' as const, id })), 'Product'] : ['Product']
+        getProducts: builder.query<DataReponse, void>({
+            query: () => "products"
+            // query: (q?: any) => "products?" + toQueryParams(q),
+            // providesTags: (result) =>
+            //     result ? [...result.data.map(({ id }) => ({ type: 'Product' as const, id })), 'Product'] : ['Product']
         }),
         getProduct: builder.query<Product, void>({
             query: (q: any) => "product?" + toQueryParams(q),

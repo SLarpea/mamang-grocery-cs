@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./index.module.scss";
 import classnames from "classnames";
 import Carousel, { CarouselRef } from "@/components/common/Carousel";
@@ -9,9 +9,21 @@ import {
   faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import Slide from "@/components/common/Carousel/components/Slide";
+import { useGetProductsQuery } from "@/redux/features/api/product";
 
 const SaleProducts = () => {
   const carouselRef = useRef<CarouselRef | null>(null);
+  const {
+    data,
+    isLoading,
+    isError,
+    isSuccess
+  } = useGetProductsQuery();
+
+  useEffect(() => {
+    console.log(data);
+  });
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>

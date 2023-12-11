@@ -11,3 +11,9 @@ export interface Category {
     id: number;
     name: string;
 }
+
+export interface DataReponse {
+    code: number;
+    success: boolean;
+    data: Product[];
+}

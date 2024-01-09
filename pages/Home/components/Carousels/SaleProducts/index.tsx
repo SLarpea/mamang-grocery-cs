@@ -10,9 +10,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Slide from "@/components/common/Carousel/components/Slide";
 import { useGetProductsQuery } from "@/redux/features/api/product";
+import { useRouter } from "next/navigation";
 
 const SaleProducts = () => {
   const carouselRef = useRef<CarouselRef | null>(null);
+  const router = useRouter();
   const {
     data,
     isLoading,
@@ -29,7 +31,9 @@ const SaleProducts = () => {
       <div className={styles.header}>
         <div className={styles.carouselTitle}>
           <span>On Sale</span>
-          <span>View All</span>
+          <span onClick={() => {
+            router.push('/products?current=onsale')
+          }}>View All</span>
         </div>
         <div className={styles.carouselNav}>
           <div

@@ -1,5 +1,6 @@
 import { DataReponse, Product } from '@/redux/types';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { Quando } from 'next/font/google';
 
 const toQueryParams = (q: any) => {
     return Object.keys(q).map((key: string) => `${key}=${q[key]}`).join('&');
@@ -10,8 +11,8 @@ export const productsApi = createApi({
     baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_API_URL }),
     tagTypes: ["Product", "SingleProduct"],
     endpoints: (builder) => ({
-        getProducts: builder.query<DataReponse, void>({
-            query: () => "products"
+        getProducts: builder.query<DataReponse, string>({
+            query: (q: string) => "/products?current=" + q
             // query: (q?: any) => "products?" + toQueryParams(q),
             // providesTags: (result) =>
             //     result ? [...result.data.map(({ id }) => ({ type: 'Product' as const, id })), 'Product'] : ['Product']

@@ -15,5 +15,5 @@ export interface Category {
 export interface DataReponse {
     code: number;
     success: boolean;
-    data: Product[];
+    data: Product[] | Category[];
 }
